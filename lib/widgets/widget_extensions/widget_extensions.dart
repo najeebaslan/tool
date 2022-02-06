@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:flutx/widgets/widget_extensions/nb_utilse.dart';
-import 'package:flutx/widgets/decoration.dart';
+import 'package:tool/widgets/widget_extensions/nb_utilse.dart';
+import 'package:tool/widgets/decoration.dart';
 
 extension WidgetExtension on Widget? {
   /// With custom height and width

@@ -1,5 +1,3 @@
-
-
 ///
 
 /// [FxCreditCard] - customisable credit card with all the necessary details in it.
@@ -8,12 +6,12 @@ import 'dart:math';
 
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-import 'package:flutx/themes/app_theme.dart';
-import 'package:flutx/utils/spacing.dart';
-import 'package:flutx/widgets/text/text.dart';
-import 'package:flutx/widgets/text_field/text_field.dart';
-import 'package:flutx/utils/formatters/card_month_input_formatter.dart';
-import 'package:flutx/utils/formatters/card_number_input_formatter.dart';
+import 'package:tool/themes/app_theme.dart';
+import 'package:tool/utils/spacing.dart';
+import 'package:tool/widgets/text/text.dart';
+import 'package:tool/widgets/text_field/text_field.dart';
+import 'package:tool/utils/formatters/card_month_input_formatter.dart';
+import 'package:tool/utils/formatters/card_number_input_formatter.dart';
 
 typedef void OnCreditCardNumberChanged(String creditCardNumber);
 typedef void OnCreditCardDateChanged(String creditCardDate);
@@ -92,44 +90,40 @@ class _FxCreditCardState extends State<FxCreditCard>
 
     cardNumberTextEditingController!.addListener(() {
       setState(() {
-        if (cardNumberTextEditingController!.text.isNotEmpty){
+        if (cardNumberTextEditingController!.text.isNotEmpty) {
           creditCardNumber = cardNumberTextEditingController!.text;
           widget.onCreditCardNumberChanged(creditCardNumber);
-        }
-        else
+        } else
           creditCardNumber = "4040 4040 4040 4040";
       });
     });
 
     cardDateTextEditingController!.addListener(() {
       setState(() {
-        if (cardDateTextEditingController!.text.isNotEmpty){
+        if (cardDateTextEditingController!.text.isNotEmpty) {
           creditCardDate = cardDateTextEditingController!.text;
           widget.onCreditCardDateChanged(creditCardDate);
-        }
-        else
+        } else
           creditCardDate = "MM/YY";
       });
     });
 
     cardNameTextEditingController!.addListener(() {
       setState(() {
-        if (cardNameTextEditingController!.text.isNotEmpty){
+        if (cardNameTextEditingController!.text.isNotEmpty) {
           creditCardName = cardNameTextEditingController!.text;
           widget.onCreditCardNameChanged(creditCardName);
-        }
-        else
+        } else
           creditCardName = "Holder Name";
       });
     });
 
     cardCVVTextEditingController!.addListener(() {
       setState(() {
-        if (cardCVVTextEditingController!.text.isNotEmpty){
+        if (cardCVVTextEditingController!.text.isNotEmpty) {
           creditCardCVV = cardCVVTextEditingController!.text;
           widget.onCreditCardCVVChanged(creditCardCVV);
-        }
-        else
+        } else
           creditCardCVV = "739";
       });
     });

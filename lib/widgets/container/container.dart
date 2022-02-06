@@ -3,7 +3,7 @@
 /// [FxContainer.bordered] - provides border to the container.
 /// [FxContainer.rounded] - provides rounded shape to the container for the given height and width of the container.
 
-import 'package:flutx/themes/app_theme.dart';
+import 'package:tool/themes/app_theme.dart';
 import '../../utils/spacing.dart';
 import 'package:flutter/material.dart';
 

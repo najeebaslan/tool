@@ -1,4 +1,4 @@
-# flutx
+# tool
 
 A new Flutter package project.
 

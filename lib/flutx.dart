@@ -1,24 +1,19 @@
-library flutx;
+library tool;
 
-import 'package:flutx/core/logs/log.dart';
-import 'package:flutx/themes/app_theme_notifier.dart';
+import 'package:tool/core/logs/log.dart';
+import 'package:tool/themes/app_theme_notifier.dart';
 
-
-
-class FlutX {
-
+class tool {
   // entry point of the package
-  init(){
+  init() {
     FxAppThemeNotifier().init();
   }
 
-  static enableLog(){
+  static enableLog() {
     FxLog.enable();
   }
 
-  static disableLog(){
+  static disableLog() {
     FxLog.disable();
   }
-
-
 }

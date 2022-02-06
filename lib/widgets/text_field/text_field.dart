@@ -1,18 +1,15 @@
-
-
 ///There are mainly 2 styles of TextField.
 ///[FxTextFieldStyle.underlined] -  It gives underline to the textField.
 ///[FxTextFieldStyle.outlined] -  It gives outline to the textField.
-
 
 import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/rendering.dart';
 import 'package:flutter/services.dart';
-import 'package:flutx/themes/app_theme.dart';
+import 'package:tool/themes/app_theme.dart';
 import 'dart:ui' as ui show BoxHeightStyle, BoxWidthStyle;
-import 'package:flutx/themes/text_style.dart';
-import 'package:flutx/utils/spacing.dart';
+import 'package:tool/themes/text_style.dart';
+import 'package:tool/utils/spacing.dart';
 
 enum FxTextFieldType { email, password, name, address, mobileNumber }
 enum FxTextFieldStyle {
@@ -21,7 +18,6 @@ enum FxTextFieldStyle {
 }
 
 class FxTextField extends StatefulWidget {
-
   //
   final FxTextFieldType textFieldType;
   final FxTextFieldStyle textFieldStyle;
@@ -242,7 +238,8 @@ class FxTextField extends StatefulWidget {
       this.prefixIconColor,
       this.suffixIconColor,
       this.autoFocusedBorder,
-      this.enableHint=true, this.textColor});
+      this.enableHint = true,
+      this.textColor});
 
   @override
   _FxTextFieldState createState() => _FxTextFieldState();
@@ -267,7 +264,7 @@ class _FxTextFieldState extends State<FxTextField> {
   late double? focusedBorderRadius;
   late Color? prefixIconColor;
   late Color? suffixIconColor;
-  late Color? labelTextColor,textColor;
+  late Color? labelTextColor, textColor;
   late Color? cursorColor;
   late bool autoFocusedBorder;
   late InputBorder? border;
@@ -276,7 +273,10 @@ class _FxTextFieldState extends State<FxTextField> {
   void initState() {
     super.initState();
     showPassword = false;
-    obscureText = widget.obscureText ?? widget.textFieldType == FxTextFieldType.password ? true : false;
+    obscureText =
+        widget.obscureText ?? widget.textFieldType == FxTextFieldType.password
+            ? true
+            : false;
   }
 
   @override
@@ -293,7 +293,7 @@ class _FxTextFieldState extends State<FxTextField> {
 
     maxLines = widget.maxLines;
 
-      suffixIcon = widget.suffixIcon;
+    suffixIcon = widget.suffixIcon;
     enabledBorderColor = widget.enabledBorderColor;
     focusedBorderColor = widget.focusedBorderColor;
     enabledBorderRadius = widget.enabledBorderRadius;
@@ -307,13 +307,11 @@ class _FxTextFieldState extends State<FxTextField> {
     autoIcon = widget.autoIcon ?? true;
     textColor = widget.textColor ?? labelTextColor;
 
-
     buildPasswordField();
 
     buildTextFieldStyle();
 
     buildTextFieldType();
-
 
     return TextField(
       style: widget.style ?? FxTextStyle.b1(color: textColor),
@@ -363,10 +361,11 @@ class _FxTextFieldState extends State<FxTextField> {
             isCollapsed: widget.isCollapsed ?? false,
             hoverColor: widget.hoverColor,
             hintMaxLines: widget.hintMaxLines,
-            hintStyle:  widget.hintStyle ?? widget.labelStyle ??  FxTextStyle.b1(color: labelTextColor),
-            hintText: widget.enableHint? (widget.hintText ?? labelText) : null,
+            hintStyle: widget.hintStyle ??
+                widget.labelStyle ??
+                FxTextStyle.b1(color: labelTextColor),
+            hintText: widget.enableHint ? (widget.hintText ?? labelText) : null,
             hintTextDirection: widget.hintTextDirection,
-
           ),
       autocorrect: widget.autocorrect ?? true,
       autofillHints: widget.autofillHints,
@@ -424,21 +423,20 @@ class _FxTextFieldState extends State<FxTextField> {
         filled = filled ?? true;
         fillColor = fillColor ??
             FxAppTheme.getThemeFromThemeMode().inputDecorationTheme.fillColor;
-        enabledBorder = enabledBorder ?? UnderlineInputBorder(
-
-                    borderSide: BorderSide(
-                      color:   enabledBorderColor ??
-                          FxAppTheme.getThemeFromThemeMode()
-                              .inputDecorationTheme
-                              .enabledBorder!
-                              .borderSide
-                              .color,
-                    ),
-                  );
+        enabledBorder = enabledBorder ??
+            UnderlineInputBorder(
+              borderSide: BorderSide(
+                color: enabledBorderColor ??
+                    FxAppTheme.getThemeFromThemeMode()
+                        .inputDecorationTheme
+                        .enabledBorder!
+                        .borderSide
+                        .color,
+              ),
+            );
 
         focusedBorder = focusedBorder ??
             UnderlineInputBorder(
-
               borderSide: BorderSide(
                 color: focusedBorderColor ??
                     FxAppTheme.getThemeFromThemeMode().colorScheme.primary,
@@ -452,18 +450,19 @@ class _FxTextFieldState extends State<FxTextField> {
             FxAppTheme.getThemeFromThemeMode().inputDecorationTheme.fillColor;
         enabledBorder = enabledBorder ??
             OutlineInputBorder(
-                    borderRadius: BorderRadius.all(
-                        Radius.circular(enabledBorderRadius ?? 8)),
-                    borderSide: BorderSide(
-                      color: autoFocusedBorder ? Colors.transparent :  enabledBorderColor ??
-                          FxAppTheme.getThemeFromThemeMode()
-                              .inputDecorationTheme
-                              .enabledBorder!
-                              .borderSide
-                              .color,
-                    ),
-
-                );
+              borderRadius:
+                  BorderRadius.all(Radius.circular(enabledBorderRadius ?? 8)),
+              borderSide: BorderSide(
+                color: autoFocusedBorder
+                    ? Colors.transparent
+                    : enabledBorderColor ??
+                        FxAppTheme.getThemeFromThemeMode()
+                            .inputDecorationTheme
+                            .enabledBorder!
+                            .borderSide
+                            .color,
+              ),
+            );
 
         focusedBorder = focusedBorder ??
             OutlineInputBorder(
@@ -549,16 +548,20 @@ class _FxTextFieldState extends State<FxTextField> {
 
   void buildPasswordField() {
     if (widget.textFieldType == FxTextFieldType.password) {
-      suffixIcon = autoIcon? InkWell(
-          onTap: () {
-            setState(() {
-              showPassword = !showPassword;
-              obscureText = !obscureText!;
-            });
-          },
-          child: (showPassword
-              ? Icon(Icons.visibility_outlined, color: widget.suffixIconColor)
-              : Icon(Icons.visibility_off_outlined, color: widget.suffixIconColor))) : widget.suffixIcon;
+      suffixIcon = autoIcon
+          ? InkWell(
+              onTap: () {
+                setState(() {
+                  showPassword = !showPassword;
+                  obscureText = !obscureText!;
+                });
+              },
+              child: (showPassword
+                  ? Icon(Icons.visibility_outlined,
+                      color: widget.suffixIconColor)
+                  : Icon(Icons.visibility_off_outlined,
+                      color: widget.suffixIconColor)))
+          : widget.suffixIcon;
     }
   }
 }

@@ -1,11 +1,10 @@
 import 'dart:convert';
 
-import 'package:flutx/core/network/response.dart';
-import 'package:flutx/core/network/util.dart';
+import 'package:tool/core/network/response.dart';
+import 'package:tool/core/network/util.dart';
 import 'package:http/http.dart' as http;
 
 class FxNetwork {
-
   static Future<FxNetworkResponse> post(String url,
       {Map<String, String>? headers, Object? body, Encoding? encoding}) async {
     http.Response response = await http.post(

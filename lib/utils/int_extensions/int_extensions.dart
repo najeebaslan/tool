@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:flutx/widgets/decoration.dart';
+import 'package:tool/widgets/decoration.dart';
 
 extension IntExtensions on int? {
   /// Validate given int is not null and returns given value if null.
