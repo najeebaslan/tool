@@ -4,11 +4,11 @@
 
 import 'dart:developer';
 
-class FxLog{
+class ToolLog{
 
   static bool _enabled = true;
 
-  FxLog(dynamic message){
+  ToolLog(dynamic message){
     if(_enabled)
       log(message.toString());
   }

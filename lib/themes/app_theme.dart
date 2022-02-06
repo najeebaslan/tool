@@ -4,23 +4,23 @@
 * */
 
 
-/// [FxAppThemeType.dark] - Applies all the properties for dark theme
-/// [FxAppThemeType.light] - Applies all the properties for light theme
+/// [ToolAppThemeType.dark] - Applies all the properties for dark theme
+/// [ToolAppThemeType.light] - Applies all the properties for light theme
 
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
 import 'custom_theme.dart';
 
-enum FxAppThemeType { light, dark }
+enum ToolAppThemeType { light, dark }
 
 class FxAppTheme {
 
-  static FxAppThemeType defaultThemeType = FxAppThemeType.light;
+  static ToolAppThemeType defaultThemeType = ToolAppThemeType.light;
 
 
   static ThemeData get theme => FxAppTheme.getThemeFromThemeMode();
-  static FxCustomTheme get customTheme => FxCustomTheme.getCustomAppTheme();
+  static ToolCustomTheme get customTheme => ToolCustomTheme.getCustomAppTheme();
 
   static ThemeData lightTheme = ThemeData.light().copyWith(
     brightness: Brightness.light,
@@ -228,13 +228,13 @@ class FxAppTheme {
       ),
       cupertinoOverrideTheme: CupertinoThemeData());
 
-  static ThemeData getThemeFromThemeMode({FxAppThemeType? themeType}) {
+  static ThemeData getThemeFromThemeMode({ToolAppThemeType? themeType}) {
     if (themeType == null) {
       themeType = defaultThemeType;
     }
 
     switch (themeType) {
-      case FxAppThemeType.light:
+      case ToolAppThemeType.light:
         return lightTheme;
       default:
         return darkTheme;
@@ -250,7 +250,7 @@ class FxAppTheme {
     darkTheme = themeData;
   }
 
-  static void changeThemeType(FxAppThemeType? themeType){
+  static void changeThemeType(ToolAppThemeType? themeType){
     defaultThemeType = themeType!;
   }
 

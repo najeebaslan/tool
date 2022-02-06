@@ -14,7 +14,7 @@ import 'package:google_fonts/google_fonts.dart';
 
 import 'app_theme.dart';
 
-enum FxTextSize {
+enum ToolTextSize {
   h1,
   h2,
   h3,
@@ -45,36 +45,36 @@ class FxTextStyle {
     900: FontWeight.w800,
   };
 
-  static Map<FxTextSize, double> _defaultTextSize = {
-    FxTextSize.h1: 102,
-    FxTextSize.h2: 64,
-    FxTextSize.h3: 51,
-    FxTextSize.h4: 36,
-    FxTextSize.h5: 25,
-    FxTextSize.h6: 21,
-    FxTextSize.sh1: 17,
-    FxTextSize.sh2: 15,
-    FxTextSize.b1: 16,
-    FxTextSize.b2: 14,
-    FxTextSize.button: 13,
-    FxTextSize.caption: 12,
-    FxTextSize.overline: 10,
+  static Map<ToolTextSize, double> _defaultTextSize = {
+    ToolTextSize.h1: 102,
+    ToolTextSize.h2: 64,
+    ToolTextSize.h3: 51,
+    ToolTextSize.h4: 36,
+    ToolTextSize.h5: 25,
+    ToolTextSize.h6: 21,
+    ToolTextSize.sh1: 17,
+    ToolTextSize.sh2: 15,
+    ToolTextSize.b1: 16,
+    ToolTextSize.b2: 14,
+    ToolTextSize.button: 13,
+    ToolTextSize.caption: 12,
+    ToolTextSize.overline: 10,
   };
 
-  static Map<FxTextSize, double> _defaultLetterSpacing = {
-    FxTextSize.h1: -0.2,
-    FxTextSize.h2: -0.15,
-    FxTextSize.h3: 0,
-    FxTextSize.h4: 0,
-    FxTextSize.h5: 0,
-    FxTextSize.h6: 0,
-    FxTextSize.sh1: 0.15,
-    FxTextSize.sh2: 0.15,
-    FxTextSize.b1: 0.15,
-    FxTextSize.b2: 0.15,
-    FxTextSize.button: 0.15,
-    FxTextSize.caption: 0.15,
-    FxTextSize.overline: 0.15,
+  static Map<ToolTextSize, double> _defaultLetterSpacing = {
+    ToolTextSize.h1: -0.2,
+    ToolTextSize.h2: -0.15,
+    ToolTextSize.h3: 0,
+    ToolTextSize.h4: 0,
+    ToolTextSize.h5: 0,
+    ToolTextSize.h6: 0,
+    ToolTextSize.sh1: 0.15,
+    ToolTextSize.sh2: 0.15,
+    ToolTextSize.b1: 0.15,
+    ToolTextSize.b2: 0.15,
+    ToolTextSize.button: 0.15,
+    ToolTextSize.caption: 0.15,
+    ToolTextSize.overline: 0.15,
   };
 
   static TextStyle getStyle(
@@ -125,12 +125,12 @@ class FxTextStyle {
       double wordSpacing = 0,
       double? fontSize}) {
     return getStyle(
-        fontSize: fontSize ?? _defaultTextSize[FxTextSize.h1],
+        fontSize: fontSize ?? _defaultTextSize[ToolTextSize.h1],
         color: color,
         height: height,
         muted: muted,
         letterSpacing:
-            letterSpacing ?? _defaultLetterSpacing[FxTextSize.h1] ?? -0.2,
+            letterSpacing ?? _defaultLetterSpacing[ToolTextSize.h1] ?? -0.2,
         fontWeight: fontWeight,
         decoration: decoration,
         textStyle: textStyle,
@@ -150,12 +150,12 @@ class FxTextStyle {
       double wordSpacing = 0,
       double? fontSize}) {
     return getStyle(
-        fontSize: fontSize ?? _defaultTextSize[FxTextSize.h2],
+        fontSize: fontSize ?? _defaultTextSize[ToolTextSize.h2],
         color: color,
         height: height,
         muted: muted,
         letterSpacing:
-            letterSpacing ?? _defaultLetterSpacing[FxTextSize.h2] ?? -0.15,
+            letterSpacing ?? _defaultLetterSpacing[ToolTextSize.h2] ?? -0.15,
         fontWeight: fontWeight,
         decoration: decoration,
         textStyle: textStyle,
@@ -175,12 +175,12 @@ class FxTextStyle {
       double wordSpacing = 0,
       double? fontSize}) {
     return getStyle(
-        fontSize: fontSize ?? _defaultTextSize[FxTextSize.h3],
+        fontSize: fontSize ?? _defaultTextSize[ToolTextSize.h3],
         color: color,
         height: height,
         muted: muted,
         letterSpacing:
-            letterSpacing ?? _defaultLetterSpacing[FxTextSize.h3] ?? -0.15,
+            letterSpacing ?? _defaultLetterSpacing[ToolTextSize.h3] ?? -0.15,
         fontWeight: fontWeight,
         decoration: decoration,
         textStyle: textStyle,
@@ -200,12 +200,12 @@ class FxTextStyle {
       double wordSpacing = 0,
       double? fontSize}) {
     return getStyle(
-        fontSize: fontSize ?? _defaultTextSize[FxTextSize.h4],
+        fontSize: fontSize ?? _defaultTextSize[ToolTextSize.h4],
         color: color,
         height: height,
         muted: muted,
         letterSpacing:
-            letterSpacing ?? _defaultLetterSpacing[FxTextSize.h4] ?? 0,
+            letterSpacing ?? _defaultLetterSpacing[ToolTextSize.h4] ?? 0,
         fontWeight: fontWeight,
         decoration: decoration,
         textStyle: textStyle,
@@ -225,12 +225,12 @@ class FxTextStyle {
       double wordSpacing = 0,
       double? fontSize}) {
     return getStyle(
-        fontSize: fontSize ?? _defaultTextSize[FxTextSize.h5],
+        fontSize: fontSize ?? _defaultTextSize[ToolTextSize.h5],
         color: color,
         height: height,
         muted: muted,
         letterSpacing:
-            letterSpacing ?? _defaultLetterSpacing[FxTextSize.h5] ?? 0,
+            letterSpacing ?? _defaultLetterSpacing[ToolTextSize.h5] ?? 0,
         fontWeight: fontWeight,
         decoration: decoration,
         textStyle: textStyle,
@@ -250,12 +250,12 @@ class FxTextStyle {
       double wordSpacing = 0,
       double? fontSize}) {
     return getStyle(
-        fontSize: fontSize ?? _defaultTextSize[FxTextSize.h6],
+        fontSize: fontSize ?? _defaultTextSize[ToolTextSize.h6],
         color: color,
         height: height,
         muted: muted,
         letterSpacing:
-            letterSpacing ?? _defaultLetterSpacing[FxTextSize.h6] ?? 0,
+            letterSpacing ?? _defaultLetterSpacing[ToolTextSize.h6] ?? 0,
         fontWeight: fontWeight,
         decoration: decoration,
         textStyle: textStyle,
@@ -275,12 +275,12 @@ class FxTextStyle {
       double wordSpacing = 0,
       double? fontSize}) {
     return getStyle(
-        fontSize: fontSize ?? _defaultTextSize[FxTextSize.sh1],
+        fontSize: fontSize ?? _defaultTextSize[ToolTextSize.sh1],
         color: color,
         height: height,
         muted: muted,
         letterSpacing:
-            letterSpacing ?? _defaultLetterSpacing[FxTextSize.sh1] ?? 0.15,
+            letterSpacing ?? _defaultLetterSpacing[ToolTextSize.sh1] ?? 0.15,
         fontWeight: fontWeight,
         decoration: decoration,
         textStyle: textStyle,
@@ -300,12 +300,12 @@ class FxTextStyle {
       double wordSpacing = 0,
       double? fontSize}) {
     return getStyle(
-        fontSize: fontSize ?? _defaultTextSize[FxTextSize.sh2],
+        fontSize: fontSize ?? _defaultTextSize[ToolTextSize.sh2],
         color: color,
         height: height,
         muted: muted,
         letterSpacing:
-            letterSpacing ?? _defaultLetterSpacing[FxTextSize.sh2] ?? 0.15,
+            letterSpacing ?? _defaultLetterSpacing[ToolTextSize.sh2] ?? 0.15,
         fontWeight: fontWeight,
         decoration: decoration,
         textStyle: textStyle,
@@ -325,12 +325,12 @@ class FxTextStyle {
       double wordSpacing = 0,
       double? fontSize}) {
     return getStyle(
-        fontSize: fontSize ?? _defaultTextSize[FxTextSize.b1],
+        fontSize: fontSize ?? _defaultTextSize[ToolTextSize.b1],
         color: color,
         height: height,
         muted: muted,
         letterSpacing:
-            letterSpacing ?? _defaultLetterSpacing[FxTextSize.b1] ?? 0.15,
+            letterSpacing ?? _defaultLetterSpacing[ToolTextSize.b1] ?? 0.15,
         fontWeight: fontWeight,
         decoration: decoration,
         textStyle: textStyle,
@@ -350,12 +350,12 @@ class FxTextStyle {
       double wordSpacing = 0,
       double? fontSize}) {
     return getStyle(
-        fontSize: fontSize ?? _defaultTextSize[FxTextSize.b2],
+        fontSize: fontSize ?? _defaultTextSize[ToolTextSize.b2],
         color: color,
         height: height,
         muted: muted,
         letterSpacing:
-            letterSpacing ?? _defaultLetterSpacing[FxTextSize.b2] ?? 0.15,
+            letterSpacing ?? _defaultLetterSpacing[ToolTextSize.b2] ?? 0.15,
         fontWeight: fontWeight,
         decoration: decoration,
         textStyle: textStyle,
@@ -375,12 +375,12 @@ class FxTextStyle {
       double wordSpacing = 0,
       double? fontSize}) {
     return getStyle(
-        fontSize: fontSize ?? _defaultTextSize[FxTextSize.button],
+        fontSize: fontSize ?? _defaultTextSize[ToolTextSize.button],
         color: color,
         height: height,
         muted: muted,
         letterSpacing:
-            letterSpacing ?? _defaultLetterSpacing[FxTextSize.button] ?? 0.15,
+            letterSpacing ?? _defaultLetterSpacing[ToolTextSize.button] ?? 0.15,
         fontWeight: fontWeight,
         decoration: decoration,
         textStyle: textStyle,
@@ -400,12 +400,12 @@ class FxTextStyle {
       double wordSpacing = 0,
       double? fontSize}) {
     return getStyle(
-        fontSize: fontSize ?? _defaultTextSize[FxTextSize.caption],
+        fontSize: fontSize ?? _defaultTextSize[ToolTextSize.caption],
         color: color,
         height: height,
         muted: muted,
         letterSpacing:
-            letterSpacing ?? _defaultLetterSpacing[FxTextSize.caption] ?? 0.15,
+            letterSpacing ?? _defaultLetterSpacing[ToolTextSize.caption] ?? 0.15,
         fontWeight: fontWeight,
         decoration: decoration,
         textStyle: textStyle,
@@ -425,12 +425,12 @@ class FxTextStyle {
       double wordSpacing = 0,
       double? fontSize}) {
     return getStyle(
-        fontSize: fontSize ?? _defaultTextSize[FxTextSize.overline],
+        fontSize: fontSize ?? _defaultTextSize[ToolTextSize.overline],
         color: color,
         height: height,
         muted: muted,
         letterSpacing:
-            letterSpacing ?? _defaultLetterSpacing[FxTextSize.overline] ?? 0.15,
+            letterSpacing ?? _defaultLetterSpacing[ToolTextSize.overline] ?? 0.15,
         fontWeight: fontWeight,
         decoration: decoration,
         textStyle: textStyle,
@@ -446,13 +446,13 @@ class FxTextStyle {
     FxTextStyle._defaultFontWeight = defaultFontWeight;
   }
 
-  static void changeDefaultTextSize(Map<FxTextSize, double> defaultTextSize) {
+  static void changeDefaultTextSize(Map<ToolTextSize, double> defaultTextSize) {
     FxTextStyle._defaultTextSize = defaultTextSize;
   }
 
-  static Map<FxTextSize, double> get defaultTextSize => _defaultTextSize;
+  static Map<ToolTextSize, double> get defaultTextSize => _defaultTextSize;
 
-  static Map<FxTextSize, double> get defaultLetterSpacing =>
+  static Map<ToolTextSize, double> get defaultLetterSpacing =>
       _defaultLetterSpacing;
 
   static Map<int, FontWeight> get defaultFontWeight => _defaultFontWeight;

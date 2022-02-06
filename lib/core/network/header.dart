@@ -1,21 +1,21 @@
 class FxNetworkHeader {
   static Map<String, String> create(
-      {FxNetworkRequestType requestType = FxNetworkRequestType.get,
+      {ToolNetworkRequestTyp requestType = ToolNetworkRequestTyp.get,
       String? token = ""}) {
     Map<String, String> header = {"Accept": "application/json"};
 
     switch (requestType) {
-      case FxNetworkRequestType.get:
+      case ToolNetworkRequestTyp.get:
         break;
 
-      case FxNetworkRequestType.post:
-      case FxNetworkRequestType.delete:
+      case ToolNetworkRequestTyp.post:
+      case ToolNetworkRequestTyp.delete:
         header["Content-type"] = "application/json";
         break;
 
-      case FxNetworkRequestType.getWithAuth:
-      case FxNetworkRequestType.postWithAuth:
-      case FxNetworkRequestType.deleteWithAuth:
+      case ToolNetworkRequestTyp.getWithAuth:
+      case ToolNetworkRequestTyp.postWithAuth:
+      case ToolNetworkRequestTyp.deleteWithAuth:
         header["Content-type"] = "application/json";
         header["Authorization"] = "Bearer " + token!;
         break;
@@ -25,7 +25,7 @@ class FxNetworkHeader {
   }
 }
 
-enum FxNetworkRequestType {
+enum ToolNetworkRequestTyp {
   get,
   post,
   delete,

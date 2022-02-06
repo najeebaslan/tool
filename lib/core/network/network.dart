@@ -4,57 +4,57 @@ import 'package:tool/core/network/response.dart';
 import 'package:tool/core/network/util.dart';
 import 'package:http/http.dart' as http;
 
-class FxNetwork {
-  static Future<FxNetworkResponse> post(String url,
+class ToolLogNetwork {
+  static Future<ToolNetworkResponse> post(String url,
       {Map<String, String>? headers, Object? body, Encoding? encoding}) async {
     http.Response response = await http.post(
-        FxNetworkUtil.parseToUri(url, format: true),
+        ToolNetworkUtil.parseToUri(url, format: true),
         headers: headers,
         body: body,
         encoding: encoding);
 
-    return FxNetworkResponse(response.body, response.statusCode, response);
+    return ToolNetworkResponse(response.body, response.statusCode, response);
   }
 
-  static Future<FxNetworkResponse> get(String url,
+  static Future<ToolNetworkResponse> get(String url,
       {Map<String, String>? headers}) async {
     http.Response response = await http.get(
-      FxNetworkUtil.parseToUri(url, format: true),
+      ToolNetworkUtil.parseToUri(url, format: true),
       headers: headers,
     );
 
-    return FxNetworkResponse(response.body, response.statusCode, response);
+    return ToolNetworkResponse(response.body, response.statusCode, response);
   }
 
-  static Future<FxNetworkResponse> delete(String url,
+  static Future<ToolNetworkResponse> delete(String url,
       {Map<String, String>? headers, Object? body, Encoding? encoding}) async {
     http.Response response = await http
-        .delete(FxNetworkUtil.parseToUri(url, format: true), headers: headers);
+        .delete(ToolNetworkUtil.parseToUri(url, format: true), headers: headers);
 
-    return FxNetworkResponse(response.body, response.statusCode, response);
+    return ToolNetworkResponse(response.body, response.statusCode, response);
   }
 
-  static Future<FxNetworkResponse> put(String url,
+  static Future<ToolNetworkResponse> put(String url,
       {Map<String, String>? headers, Object? body, Encoding? encoding}) async {
     http.Response response = await http
-        .put(FxNetworkUtil.parseToUri(url, format: true), headers: headers);
+        .put(ToolNetworkUtil.parseToUri(url, format: true), headers: headers);
 
-    return FxNetworkResponse(response.body, response.statusCode, response);
+    return ToolNetworkResponse(response.body, response.statusCode, response);
   }
 
-  static Future<FxNetworkResponse> patch(String url,
+  static Future<ToolNetworkResponse> patch(String url,
       {Map<String, String>? headers, Object? body, Encoding? encoding}) async {
     http.Response response = await http
-        .patch(FxNetworkUtil.parseToUri(url, format: true), headers: headers);
+        .patch(ToolNetworkUtil.parseToUri(url, format: true), headers: headers);
 
-    return FxNetworkResponse(response.body, response.statusCode, response);
+    return ToolNetworkResponse(response.body, response.statusCode, response);
   }
 
-  static Future<FxNetworkResponse> head(String url,
+  static Future<ToolNetworkResponse> head(String url,
       {Map<String, String>? headers, Object? body, Encoding? encoding}) async {
     http.Response response = await http
-        .head(FxNetworkUtil.parseToUri(url, format: true), headers: headers);
+        .head(ToolNetworkUtil.parseToUri(url, format: true), headers: headers);
 
-    return FxNetworkResponse(response.body, response.statusCode, response);
+    return ToolNetworkResponse(response.body, response.statusCode, response);
   }
 }

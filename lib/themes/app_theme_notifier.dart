@@ -4,7 +4,7 @@
 * */
 
 
-/// [FxAppThemeNotifier] - notifies the app by giving the theme to the app
+/// [ToolAppThemeNotifier] - notifies the app by giving the theme to the app
 
 import 'dart:developer';
 
@@ -14,22 +14,22 @@ import 'package:shared_preferences/shared_preferences.dart';
 
 import 'app_theme.dart';
 
-class FxAppThemeNotifier extends ChangeNotifier {
+class ToolAppThemeNotifier extends ChangeNotifier {
 
 
   init() async {
     SharedPreferences sharedPreferences = await SharedPreferences.getInstance();
 
-    int fxAppThemeMode = sharedPreferences.getInt("fx_app_theme_mode")??FxAppThemeType.light.index;
-    changeAppThemeMode(FxAppThemeType.values[fxAppThemeMode]);
+    int fxAppThemeMode = sharedPreferences.getInt("fx_app_theme_mode")??ToolAppThemeType.light.index;
+    changeAppThemeMode(ToolAppThemeType.values[fxAppThemeMode]);
 
-    int fxCustomThemeMode = sharedPreferences.getInt("fx_custom_theme_mode")??FxAppThemeType.light.index;
-    changeCustomThemeMode(FxCustomThemeType.values[fxCustomThemeMode]);
+    int ToolCustomThemeMode = sharedPreferences.getInt("fx_custom_theme_mode")??ToolAppThemeType.light.index;
+    changeCustomThemeMode(ToolCustomThemeType.values[ToolCustomThemeMode]);
 
     notifyListeners();
   }
 
-  changeAppThemeMode(FxAppThemeType? themeType) async {
+  changeAppThemeMode(ToolAppThemeType? themeType) async {
     FxAppTheme.defaultThemeType = themeType!;
     SharedPreferences sharedPreferences = await SharedPreferences.getInstance();
     await sharedPreferences.setInt("fx_app_theme_mode", themeType.index);
@@ -39,8 +39,8 @@ class FxAppThemeNotifier extends ChangeNotifier {
 
   }
 
-  changeCustomThemeMode(FxCustomThemeType? themeType) async {
-    FxCustomTheme.defaultThemeType = themeType!;
+  changeCustomThemeMode(ToolCustomThemeType? themeType) async {
+    ToolCustomTheme.defaultThemeType = themeType!;
     SharedPreferences sharedPreferences = await SharedPreferences.getInstance();
     await sharedPreferences.setInt("fx_custom_theme_mode", themeType.index);
 

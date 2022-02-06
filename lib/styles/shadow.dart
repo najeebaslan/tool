@@ -6,7 +6,7 @@
 
 import 'package:flutter/material.dart';
 
-enum FxShadowPosition {
+enum ToolShadowPosition {
   topLeft,
   top,
   topRight,
@@ -22,7 +22,7 @@ class FxShadow {
   late int alpha;
   late double elevation, spreadRadius, blurRadius;
   Offset? offset;
-  FxShadowPosition? position;
+  ToolShadowPosition? position;
   Color? color;
   bool? darkShadow;
 
@@ -31,7 +31,7 @@ class FxShadow {
       double? spreadRadius,
       double? blurRadius,
       Offset? offset,
-      FxShadowPosition position = FxShadowPosition.bottom,
+      ToolShadowPosition position = ToolShadowPosition.bottom,
       int? alpha,
       Color? color,
       bool darkShadow = false}) {
@@ -46,33 +46,33 @@ class FxShadow {
 
     if (offset == null) {
       switch (position) {
-        case FxShadowPosition.topLeft:
+        case ToolShadowPosition.topLeft:
           this.offset = Offset(-elevation, -elevation);
           break;
-        case FxShadowPosition.top:
+        case ToolShadowPosition.top:
           this.offset = Offset(0, -elevation);
           break;
-        case FxShadowPosition.topRight:
+        case ToolShadowPosition.topRight:
           this.offset = Offset(elevation, -elevation);
           break;
         //TODO: Shadow problem
-        case FxShadowPosition.centerLeft:
+        case ToolShadowPosition.centerLeft:
           this.offset = Offset(-elevation, elevation * 0.25);
           break;
-        case FxShadowPosition.center:
+        case ToolShadowPosition.center:
           this.offset = Offset(0, 0);
           break;
         //TODO: Shadow problem
-        case FxShadowPosition.centerRight:
+        case ToolShadowPosition.centerRight:
           this.offset = Offset(elevation, elevation * 0.25);
           break;
-        case FxShadowPosition.bottomLeft:
+        case ToolShadowPosition.bottomLeft:
           this.offset = Offset(-elevation, elevation);
           break;
-        case FxShadowPosition.bottom:
+        case ToolShadowPosition.bottom:
           this.offset = Offset(0, elevation);
           break;
-        case FxShadowPosition.bottomRight:
+        case ToolShadowPosition.bottomRight:
           this.offset = Offset(elevation, elevation);
           break;
       }

@@ -3,17 +3,17 @@ library tool;
 import 'package:tool/core/logs/log.dart';
 import 'package:tool/themes/app_theme_notifier.dart';
 
-class tool {
+class Tool {
   // entry point of the package
   init() {
-    FxAppThemeNotifier().init();
+    ToolAppThemeNotifier().init();
   }
 
   static enableLog() {
-    FxLog.enable();
+    ToolLog.enable();
   }
 
   static disableLog() {
-    FxLog.disable();
+    ToolLog.disable();
   }
 }
